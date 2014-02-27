@@ -1,3 +1,5 @@
+module Q09 where
+
 pack' :: Eq a => [a] -> [a] -> [[a]]
 pack' [] _ = []
 pack' (h:[]) xs = [h:xs]

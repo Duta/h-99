@@ -1,3 +1,5 @@
+module Q01 where
+
 myLast :: [a] -> a
 myLast [] = error "Empty list has no last element"
 myLast [h] = h

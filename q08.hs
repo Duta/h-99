@@ -1,3 +1,5 @@
+module Q08 where
+
 compress :: Eq a => [a] -> [a]
 compress [] = []
 compress (h:[]) = [h]

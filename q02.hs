@@ -1,3 +1,5 @@
+module Q02 where
+
 myButLast :: [a] -> a
 myButLast [] = error "Empty list has no second last element"
 myButLast [_] = error "Singleton list has no second last element"
