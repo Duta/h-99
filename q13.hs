@@ -5,9 +5,9 @@ data OneOrMany a = Single a | Multiple Int a
 
 encodeDirect :: Eq a => [a] -> [OneOrMany a]
 encodeDirect []    = []
-encodeDirect (h:t) = h':encodeDirect t'
+encodeDirect xs@(h:t) = h':encodeDirect t'
   where
-    h' = case length $ takeWhile (==h) (h:t) of
+    h' = case length $ takeWhile (==h) xs of
       1 -> Single h
       n -> Multiple n h
     t' = dropWhile (==h) t
