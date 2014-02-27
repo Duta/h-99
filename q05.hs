@@ -1,5 +1,5 @@
 module Q05 where
 
 myReverse :: [a] -> [a]
-myReverse [] = []
+myReverse []    = []
 myReverse (h:t) = myReverse t ++ [h]
