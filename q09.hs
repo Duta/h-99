@@ -1,15 +1,8 @@
 module Q09 where
 
-pack' :: Eq a => [a] -> [a] -> [[a]]
-pack' [] _      = []
-pack' (h:[]) xs = [h:xs]
-pack' (h:h':t) xs
-  | h == h'   = pack' t' xs'
-  | otherwise = xs':(pack' t' [])
-  where
-    xs' = h:xs
-    t' = h':t
-
 pack :: Eq a => [a] -> [[a]]
-pack [] = []
-pack xs = pack' xs []
+pack []    = []
+pack (h:t) = h':(pack t')
+  where
+    h' = takeWhile (==h) (h:t)
+    t' = dropWhile (==h) t
